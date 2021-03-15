@@ -1,24 +1,40 @@
+import { addLightModeButton } from './lightMode/lightMode';
+
 const addPointer = (): Promise<HTMLVideoElement> => {
   return new Promise((resolve, _reject) => {
     let video: HTMLVideoElement | null = null;
     const time = setInterval(() => {
       video = document.querySelector('video');
       if (video) {
-        video.style.cursor = 'pointer';
         clearInterval(time);
+        video.style.cursor = 'pointer';
         resolve(video);
       }
     }, 1000);
   });
 };
 
-const setUpgrades = async () => {
-  await addPointer();
-  console.log(';)');
+const addHoverToDots = (): Promise<NodeListOf<HTMLElement>> => {
+  return new Promise((resolve, _reject) => {
+    let dots: NodeListOf<HTMLElement> | null = null;
+    const time = setInterval(() => {
+      dots = document.querySelectorAll('ul.slick-dots > li > button');
+      if (dots.length) {
+        clearInterval(time);
+        dots.forEach((dot) => {
+          dot.classList.add('dot');
+        });
+        resolve(dots);
+      }
+    }, 1000);
+  });
 };
 
-if (this.location.host.includes('disneyplus')) {
-  if (this.location.pathname.includes('video')) {
-    setUpgrades();
-  }
+if (window.location.pathname.includes('video')) {
+  addPointer();
+}
+
+if (window.location.pathname.includes('home')) {
+  addHoverToDots();
+  addLightModeButton();
 }
