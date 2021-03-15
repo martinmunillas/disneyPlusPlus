@@ -4,7 +4,7 @@ Disney Plus Plus is a unofficial chrome extension intended to solve any problems
 
 If you notice any weird behavior in disney plus please open an issue so it can be solved.
 
-### Features aded:
+### Features added:
 
 - Light Mode
 
