@@ -4,9 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "tsc -w"
+    "dev": "webpack-cli --watch --mode development"
   },
   "devDependencies": {
-    "typescript": "^4.2.3"
+    "@types/chrome": "^0.0.133",
+    "ts-loader": "^8.0.18",
+    "typescript": "^4.2.3",
+    "webpack": "^5.25.1",
+    "webpack-cli": "^4.5.0"
   }
 }
